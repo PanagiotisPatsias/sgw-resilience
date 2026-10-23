@@ -29,7 +29,7 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
-      - run: pip install '.[ui,dev]'
+      - run: pip install -e '.[ui,dev]'
       - run: ruff check app scripts tests ui
       - run: ruff format --check app scripts tests ui
       - run: python -m scripts.train_autoencoder
@@ -46,10 +46,11 @@ jobs:
           path: ~/.cache/huggingface
           key: sentence-models-minilm-v1
       - run: pip install torch --index-url https://download.pytorch.org/whl/cpu
-      - run: pip install '.[rag,dev]'
+      - run: pip install -e '.[rag,dev]'
       - run: RUN_RAG_TESTS=1 pytest -q tests/test_retrieval.py
       - run: python -m scripts.evaluate_rag
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: retrieval-evaluation
           path: artifacts/rag_evaluation.json

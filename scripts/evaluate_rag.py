@@ -34,3 +34,4 @@ if __name__ == "__main__":
     }
     Path("artifacts/rag_evaluation.json").write_text(json.dumps(report, indent=2))
     print(json.dumps(report, indent=2))
+    raise SystemExit(0 if report["cases_passed"] == report["total"] else 1)
