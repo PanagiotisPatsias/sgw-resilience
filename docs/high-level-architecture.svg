@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title description">
+<title id="title">SGW Resilience — High-Level Architecture</title>
+<desc id="description">Streamlit calls a modular FastAPI backend. Synthetic source fixtures and telemetry batches enter the API. Weather, condition, decision and leadership modules read and write PostgreSQL. Raw telemetry is evaluated in memory; window results are stored. Local retrieval uses versioned playbooks, Chroma, embeddings and a reranker. The anomaly model loads saved artifacts. Drafts and briefings use the external OpenAI API. Tasks require human approval.</desc>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#005630"/></marker>
+</defs>
+<style>text{font-family:Arial,Helvetica,sans-serif} .title{font-weight:700;fill:#111111} .body{fill:#444444} .label{font-weight:700;fill:#005630;letter-spacing:1px} .wire{fill:none;stroke:#005630;stroke-width:2}</style>
+<rect width="1600" height="900" fill="#ffffff"/>
+
+<text x="50" y="58" class="title" font-size="36">High-Level Architecture</text>
+<text x="50" y="92" class="body" font-size="21">SGW Resilience | Two workflows, one human-reviewed response process</text>
+<path d="M50 112 H1550" stroke="#00AB61" stroke-width="3"/>
+<text x="50" y="149" class="label" font-size="14">USER &amp; SIMULATED INPUTS</text>
+<text x="440" y="149" class="label" font-size="14">APPLICATION</text>
+<text x="1210" y="149" class="label" font-size="14">AI DEPENDENCIES</text>
+<rect x="50" y="175" width="300" height="130" rx="4" fill="#ffffff" stroke="#CCDAD2" stroke-width="1.5"/>
+<rect x="50" y="175" width="5" height="130" fill="#00AB61"/>
+<text x="70" y="207" class="title" font-size="22">Streamlit UI</text>
+<text x="70" y="237" class="body" font-size="17">Operator review and approvals</text>
+<text x="70" y="262" class="body" font-size="17">Response and leadership views</text>
+<rect x="50" y="395" width="300" height="205" rx="4" fill="#ffffff" stroke="#CCDAD2" stroke-width="1.5"/>
+<rect x="50" y="395" width="5" height="205" fill="#00AB61"/>
+<text x="70" y="427" class="title" font-size="22">Simulated inputs</text>
+<text x="70" y="457" class="body" font-size="17">GIS, maintenance and field work</text>
+<text x="70" y="482" class="body" font-size="17">JSON fixtures at setup or reset</text>
+<text x="70" y="507" class="body" font-size="17">Weather warning revisions</text>
+<text x="70" y="532" class="body" font-size="17">Generated pump telemetry</text>
+<rect x="440" y="175" width="675" height="455" rx="4" fill="#F7FAF8" stroke="#005630" stroke-width="1.5"/>
+<path d="M440 175 H1115" stroke="#00AB61" stroke-width="5"/>
+<text x="465" y="210" class="title" font-size="27">FastAPI backend</text>
+<text x="465" y="238" class="body" font-size="18">Validation · API token · workflow orchestration</text>
+<rect x="465" y="260" width="300" height="95" rx="4" fill="#ffffff" stroke="#CCDAD2" stroke-width="1.5"/>
+<rect x="465" y="260" width="5" height="95" fill="#00AB61"/>
+<text x="485" y="292" class="title" font-size="22">Weather readiness</text>
+<text x="485" y="322" class="body" font-size="17">Area matching and risk rules</text>
+<rect x="790" y="260" width="300" height="95" rx="4" fill="#ffffff" stroke="#CCDAD2" stroke-width="1.5"/>
+<rect x="790" y="260" width="5" height="95" fill="#00AB61"/>
+<text x="810" y="292" class="title" font-size="22">Pump condition</text>
+<text x="810" y="322" class="body" font-size="17">Features → model → alerts</text>
+<rect x="465" y="390" width="625" height="110" rx="4" fill="#ffffff" stroke="#CCDAD2" stroke-width="1.5"/>
+<rect x="465" y="390" width="5" height="110" fill="#00AB61"/>
+<text x="485" y="422" class="title" font-size="22">Decision &amp; response</text>
+<text x="485" y="452" class="body" font-size="17">Asset facts + procedures → validated draft</text>
+<text x="485" y="477" class="body" font-size="17">Human approval → create or reuse tasks</text>
+<rect x="465" y="520" width="625" height="85" rx="4" fill="#ffffff" stroke="#CCDAD2" stroke-width="1.5"/>
+<rect x="465" y="520" width="5" height="85" fill="#00AB61"/>
+<text x="485" y="552" class="title" font-size="22">Leadership overview</text>
+<text x="485" y="582" class="body" font-size="17">Current database snapshot · optional briefing</text>
+<rect x="440" y="710" width="675" height="115" rx="4" fill="#ffffff" stroke="#CCDAD2" stroke-width="1.5"/>
+<rect x="440" y="710" width="5" height="115" fill="#00AB61"/>
+<text x="460" y="742" class="title" font-size="22">PostgreSQL · persistent state</text>
+<text x="460" y="772" class="body" font-size="17">Assets · maintenance · events · alerts</text>
+<text x="460" y="797" class="body" font-size="17">Observations · plans · tasks · audit</text>
+<rect x="1210" y="235" width="345" height="120" rx="4" fill="#ffffff" stroke="#CCDAD2" stroke-width="1.5"/>
+<rect x="1210" y="235" width="5" height="120" fill="#00AB61"/>
+<text x="1230" y="267" class="title" font-size="22">Local autoencoder</text>
+<text x="1230" y="297" class="body" font-size="17">Saved model, scaler and threshold</text>
+<text x="1230" y="322" class="body" font-size="17">Loaded from artifacts/</text>
+<rect x="1210" y="395" width="345" height="150" rx="4" fill="#ffffff" stroke="#CCDAD2" stroke-width="1.5"/>
+<rect x="1210" y="395" width="5" height="150" fill="#00AB61"/>
+<text x="1230" y="427" class="title" font-size="22">Local retrieval</text>
+<text x="1230" y="457" class="body" font-size="17">Versioned playbooks · Chroma</text>
+<text x="1230" y="482" class="body" font-size="17">BM25 + embeddings + reranker</text>
+<text x="1230" y="507" class="body" font-size="17">Runs inside the API process</text>
+<rect x="1210" y="680" width="345" height="115" rx="4" fill="#ffffff" stroke="#777777" stroke-width="1.5" stroke-dasharray="7 5"/>
+<text x="1230" y="712" class="title" font-size="22">OpenAI API · external</text>
+<text x="1230" y="742" class="body" font-size="17">Draft recommendations and briefings</text>
+<text x="1230" y="767" class="body" font-size="17">API key required</text>
+<polyline class="wire" points="350,235 440,235" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<text x="366" y="222" class="body" font-size="14">HTTP</text>
+<polyline class="wire" points="350,480 440,480" marker-end="url(#arrow)"/>
+<text x="367" y="466" class="body" font-size="14">load</text>
+<polyline class="wire" points="780,630 780,710" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<text x="798" y="675" class="body" font-size="15">read / write</text>
+<polyline class="wire" points="1210,308 1115,308" marker-end="url(#arrow)"/>
+<polyline class="wire" points="1115,445 1210,445" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<polyline class="wire" points="1115,570 1170,570 1170,738 1210,738" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<text x="1120" y="554" class="body" font-size="14">HTTPS</text>
+<text x="50" y="865" class="body" font-size="17">Raw telemetry is evaluated in memory; observations store results for each window.</text>
+<text x="50" y="891" class="body" font-size="15">Local runtime: Streamlit, FastAPI and PostgreSQL.</text>
+</svg>

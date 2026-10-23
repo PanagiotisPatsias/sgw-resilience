@@ -1,0 +1,40 @@
+{
+  "features": [
+    "speed_mean",
+    "current_mean",
+    "current_std",
+    "flow_mean",
+    "flow_std",
+    "temperature_mean",
+    "temperature_slope"
+  ],
+  "threshold": 1.171102655214638,
+  "version": "pump-ae-synthetic-v1",
+  "metadata": {
+    "architecture": [
+      7,
+      6,
+      3,
+      6,
+      7
+    ],
+    "epochs": 250,
+    "lookback_minutes": 15,
+    "evaluation_interval_minutes": 5,
+    "persistence_windows": 3,
+    "threshold_quantile": 0.99,
+    "normal_reference_training": true,
+    "failure_labels_used": false,
+    "split": "disjoint chronological runs; separate normal validation and calibration",
+    "train_windows": 1680,
+    "calibration_windows": 504
+  },
+  "metrics": {
+    "normal_test_window_exceedance_rate": 0.005952380952380952,
+    "normal_test_runs_with_persistent_alert": 0,
+    "normal_test_runs": 24,
+    "injected_test_runs_detected": 12,
+    "injected_test_runs": 12,
+    "warning": "synthetic demonstration metrics; no operational accuracy or failure lead time established"
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "cases_passed": 12,
+  "total": 12,
+  "note": "retrieval smoke evaluation, not proof of semantic answer grounding",
+  "results": [
+    {
+      "question": "What should we verify when a flood warning is issued?",
+      "hazard": "flood",
+      "asset_type": "pump",
+      "expected_document": "SOP-FLOOD",
+      "answerable": true,
+      "passed": true,
+      "retrieved": [
+        "SOP-FLOOD:warning-verification",
+        "SOP-FLOOD:flood-defence-inspection",
+        "SOP-PUMP-FLOOD:access-confirmation"
+      ],
+      "latency_ms": 177.9
+    },
+    {
+      "question": "The pumping station has no recorded backup. What standby review should be proposed?",
+      "hazard": "flood",
+      "asset_type": "pump",
+      "expected_document": "SOP-PUMP-FLOOD",
+      "answerable": true,
+      "passed": true,
+      "retrieved": [
+        "SOP-PUMP-FLOOD:standby-capacity-review"
+      ],
+      "latency_ms": 197.3
+    },
+    {
+      "question": "Who confirms the flooded station access route before a visit?",
+      "hazard": "flood",
+      "asset_type": "pump",
+      "expected_document": "SOP-PUMP-FLOOD",
+      "answerable": true,
+      "passed": true,
+      "retrieved": [
+        "SOP-PUMP-FLOOD:access-confirmation"
+      ],
+      "latency_ms": 153.3
+    },
+    {
+      "question": "How do we handle a persistent pump telemetry anomaly?",
+      "hazard": "equipment",
+      "asset_type": "pump",
+      "expected_document": "SOP-CONDITION",
+      "answerable": true,
+      "passed": true,
+      "retrieved": [
+        "SOP-CONDITION:persistent-telemetry-anomaly"
+      ],
+      "latency_ms": 132.8
+    },
+    {
+      "question": "Does a high reconstruction error diagnose an equipment failure?",
+      "hazard": "equipment",
+      "asset_type": "pump",
+      "expected_document": "SOP-CONDITION",
+      "answerable": true,
+      "passed": true,
+      "retrieved": [
+        "SOP-CONDITION:returning-to-baseline",
+        "SOP-CONDITION:persistent-telemetry-anomaly"
+      ],
+      "latency_ms": 167.5
+    },
+    {
+      "question": "Can we automatically close the incident after the score returns to normal?",
+      "hazard": "equipment",
+      "asset_type": "pump",
+      "expected_document": "SOP-CONDITION",
+      "answerable": true,
+      "passed": true,
+      "retrieved": [
+        "SOP-CONDITION:returning-to-baseline"
+      ],
+      "latency_ms": 178.6
+    },
+    {
+      "question": "What do we do when geographic exposure information is missing?",
+      "hazard": "flood",
+      "asset_type": "pump",
+      "expected_document": "SOP-DATA",
+      "answerable": true,
+      "passed": true,
+      "retrieved": [
+        "SOP-DATA:missing-and-stale-information",
+        "SOP-FLOOD:warning-verification"
+      ],
+      "latency_ms": 159.0
+    },
+    {
+      "question": "What should a leadership briefing report about owners and open tasks?",
+      "hazard": "all",
+      "asset_type": "all",
+      "expected_document": "SOP-LEADERSHIP",
+      "answerable": true,
+      "passed": true,
+      "retrieved": [
+        "SOP-LEADERSHIP:situation-briefing"
+      ],
+      "latency_ms": 115.2
+    },
+    {
+      "question": "Who approves an AI generated action and what if the alert changed?",
+      "hazard": "flood",
+      "asset_type": "substation",
+      "expected_document": "SOP-WORK",
+      "answerable": true,
+      "passed": true,
+      "retrieved": [
+        "SOP-WORK:human-approval"
+      ],
+      "latency_ms": 166.5
+    },
+    {
+      "question": "How should qualified personnel review a substation flood alert?",
+      "hazard": "flood",
+      "asset_type": "substation",
+      "expected_document": "SOP-ELECTRICAL",
+      "answerable": true,
+      "passed": true,
+      "retrieved": [
+        "SOP-ELECTRICAL:qualified-review"
+      ],
+      "latency_ms": 164.4
+    },
+    {
+      "question": "What is the recipe for chocolate cake?",
+      "hazard": "flood",
+      "asset_type": "pump",
+      "expected_document": null,
+      "answerable": false,
+      "passed": true,
+      "retrieved": [],
+      "latency_ms": 183.0
+    },
+    {
+      "question": "What is tomorrow's stock price for a technology company?",
+      "hazard": "equipment",
+      "asset_type": "pump",
+      "expected_document": null,
+      "answerable": false,
+      "passed": true,
+      "retrieved": [],
+      "latency_ms": 175.8
+    }
+  ]
+}

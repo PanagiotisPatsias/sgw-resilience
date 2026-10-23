@@ -1,0 +1,13 @@
+[
+  {
+    "id": "FIELD-001",
+    "plan_id": null,
+    "alert_id": null,
+    "asset_id": "P-02",
+    "action_code": "verify_access",
+    "description": "Confirm site access for the Riverside station",
+    "assignee": "Field Team B",
+    "approved_by": "Operations lead",
+    "status": "pending"
+  }
+]

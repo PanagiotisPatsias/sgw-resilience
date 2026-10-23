@@ -1,0 +1,15 @@
+.git
+.env
+.venv
+__pycache__
+.pytest_cache
+.ruff_cache
+runtime
+output
+*.zip
+*.egg-info
+.cache
+.github
+docs
+tests
+README.md

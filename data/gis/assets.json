@@ -1,0 +1,76 @@
+[
+  {
+    "id": "P-02",
+    "name": "Riverside pump station",
+    "asset_type": "pump",
+    "region": "North Basin",
+    "latitude": 30.2187,
+    "longitude": -81.6248,
+    "criticality": 5,
+    "backup_available": false,
+    "hazard_exposure": {
+      "flood": 0.95,
+      "heatwave": 0.4
+    },
+    "updated_hours_ago": 2
+  },
+  {
+    "id": "S-13",
+    "name": "Northbank substation",
+    "asset_type": "substation",
+    "region": "North Basin",
+    "latitude": 30.2391,
+    "longitude": -81.6713,
+    "criticality": 5,
+    "backup_available": true,
+    "hazard_exposure": {
+      "flood": 0.5,
+      "heatwave": 0.4
+    },
+    "updated_hours_ago": 2
+  },
+  {
+    "id": "P-07",
+    "name": "Eastbank pump station",
+    "asset_type": "pump",
+    "region": "North Basin",
+    "latitude": 30.1794,
+    "longitude": -81.5681,
+    "criticality": 5,
+    "backup_available": true,
+    "hazard_exposure": {
+      "heatwave": 0.4
+    },
+    "updated_hours_ago": 48
+  },
+  {
+    "id": "P-04",
+    "name": "Creekside pump station",
+    "asset_type": "pump",
+    "region": "North Basin",
+    "latitude": 30.2862,
+    "longitude": -81.7197,
+    "criticality": 2,
+    "backup_available": true,
+    "hazard_exposure": {
+      "flood": 0.8,
+      "heatwave": 0.4
+    },
+    "updated_hours_ago": 2
+  },
+  {
+    "id": "P-01",
+    "name": "Westbrook pump station",
+    "asset_type": "pump",
+    "region": "North Basin",
+    "latitude": 30.3038,
+    "longitude": -81.8326,
+    "criticality": 3,
+    "backup_available": true,
+    "hazard_exposure": {
+      "flood": 0.5,
+      "heatwave": 0.4
+    },
+    "updated_hours_ago": 2
+  }
+]

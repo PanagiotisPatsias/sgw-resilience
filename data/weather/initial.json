@@ -1,0 +1,15 @@
+{
+  "id": "DEMO-FLOOD-001",
+  "revision": 1,
+  "hazard": "flood",
+  "region": "North Basin",
+  "severity": "high",
+  "bbox": [
+    -81.68,
+    30.1,
+    -81.5,
+    30.25
+  ],
+  "source": "Simulated SGW hazard feed",
+  "synthetic": true
+}

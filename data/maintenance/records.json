@@ -1,0 +1,37 @@
+[
+  {
+    "id": "M-01",
+    "asset_id": "P-01",
+    "description": "Routine equipment inspection pending",
+    "state": "open",
+    "priority": "medium"
+  },
+  {
+    "id": "M-02",
+    "asset_id": "P-02",
+    "description": "Flood barrier inspection overdue",
+    "state": "open",
+    "priority": "high"
+  },
+  {
+    "id": "M-04",
+    "asset_id": "P-04",
+    "description": "Flood barrier inspection overdue",
+    "state": "open",
+    "priority": "medium"
+  },
+  {
+    "id": "M-07",
+    "asset_id": "P-07",
+    "description": "Routine equipment inspection pending",
+    "state": "open",
+    "priority": "medium"
+  },
+  {
+    "id": "M-13",
+    "asset_id": "S-13",
+    "description": "Routine equipment inspection pending",
+    "state": "open",
+    "priority": "high"
+  }
+]

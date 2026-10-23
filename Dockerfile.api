@@ -1,0 +1,18 @@
+FROM python:3.12-slim
+WORKDIR /code
+ENV PYTHONUNBUFFERED=1 HF_HOME=/opt/models CHROMA_PATH=/code/runtime/chroma TOKENIZERS_PARALLELISM=false OMP_NUM_THREADS=2
+COPY pyproject.toml ./
+COPY app ./app
+RUN pip install --no-cache-dir "torch>=2.4,<3" --index-url https://download.pytorch.org/whl/cpu
+RUN pip install --no-cache-dir '.[rag]'
+COPY scripts ./scripts
+COPY data ./data
+COPY artifacts ./artifacts
+RUN python -m scripts.download_models
+RUN HF_HUB_OFFLINE=1 CHROMA_PATH=/opt/chroma-template python -m scripts.prepare_rag
+RUN useradd --uid 10001 --create-home app && mkdir -p /code/runtime && chown -R app:app /code /opt/chroma-template
+COPY scripts/start-api.sh /usr/local/bin/start-api
+ENV HF_HUB_OFFLINE=1
+USER app
+EXPOSE 8000
+CMD ["sh", "/usr/local/bin/start-api"]
